@@ -28,14 +28,17 @@ function IconFrame({ icon: Icon }: Readonly<{ icon: LucideIcon }>) {
 export function ProblemCard({
   icon,
   title,
+  text,
 }: Readonly<{
   icon: LucideIcon;
   title: string;
+  text: string;
 }>) {
   return (
     <CardShell>
       <IconFrame icon={icon} />
       <h3 className="font-heading text-lg font-semibold text-white">{title}</h3>
+      <p className="atlas-support-text mt-3 text-sm leading-6">{text}</p>
     </CardShell>
   );
 }

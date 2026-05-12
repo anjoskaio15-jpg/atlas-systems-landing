@@ -5,7 +5,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 const navItems = [
   { label: "Soluções", href: "#solucoes" },
   { label: "Projetos", href: "#projetos" },
-  { label: "Processo", href: "#processo" },
+  { label: "Como funciona", href: "#processo" },
   { label: "Contato", href: WHATSAPP_URL, external: true },
 ];
 

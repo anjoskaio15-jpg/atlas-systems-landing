@@ -31,44 +31,68 @@ import {
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const problems = [
-  { icon: MessageCircle, title: "Agendamentos perdidos no WhatsApp" },
-  { icon: Workflow, title: "Processos manuais e repetitivos" },
-  { icon: LayoutTemplate, title: "Falta de presença digital profissional" },
-  { icon: Search, title: "Clientes sem clareza sobre serviços e preços" },
-  { icon: MessagesSquare, title: "Atendimento desorganizado" },
-  { icon: TrendingUp, title: "Baixa conversão de visitantes em contatos" },
+  {
+    icon: MessageCircle,
+    title: "Agendamentos se perdem no WhatsApp",
+    text: "Mensagens chegam fora de ordem, horários ficam soltos e oportunidades desaparecem no meio da conversa.",
+  },
+  {
+    icon: Workflow,
+    title: "Rotinas manuais consomem tempo",
+    text: "Quando tudo depende de copiar, responder e conferir manualmente, a operação fica lenta e vulnerável a falhas.",
+  },
+  {
+    icon: LayoutTemplate,
+    title: "A presença digital não transmite confiança",
+    text: "Sem uma página clara, o cliente demora a entender serviços, valores, diferenciais e próximos passos.",
+  },
+  {
+    icon: Search,
+    title: "Informação importante fica espalhada",
+    text: "Serviços, preços, disponibilidade e orientações acabam dispersos entre conversas, posts e memória da equipe.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "O atendimento fica difícil de padronizar",
+    text: "Cada resposta sai de um jeito, confirmações falham e o cliente sente falta de clareza no processo.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Visitantes não viram contatos qualificados",
+    text: "Sem uma jornada bem pensada, o interesse inicial não se transforma em conversa, agendamento ou venda.",
+  },
 ];
 
 const services = [
   {
     icon: MousePointerClick,
     title: "Landing Pages",
-    text: "Páginas estratégicas para apresentar ofertas, gerar confiança e transformar visitantes em conversas qualificadas.",
+    text: "Páginas estratégicas para apresentar ofertas, responder dúvidas essenciais e transformar visitantes em conversas qualificadas.",
   },
   {
     icon: CalendarCheck,
     title: "Sistemas de Agendamento",
-    text: "Fluxos digitais para clientes escolherem serviço, dia e horário com mais clareza antes do atendimento.",
+    text: "Fluxos digitais para o cliente escolher serviço, dia e horário com menos fricção antes do atendimento.",
   },
   {
     icon: Bot,
     title: "Automações",
-    text: "Rotinas automatizadas para organizar atendimentos, reduzir retrabalho e manter respostas mais consistentes.",
+    text: "Rotinas automatizadas para confirmar, orientar, lembrar e organizar etapas repetitivas com mais consistência.",
   },
   {
     icon: Boxes,
     title: "SaaS e Sistemas Sob Medida",
-    text: "Ferramentas digitais desenhadas para processos específicos do negócio, com interface simples e preparada para evolução.",
+    text: "Ferramentas digitais para processos específicos do negócio, com interface simples e base preparada para evolução.",
   },
   {
     icon: BarChart3,
     title: "Dashboards",
-    text: "Painéis objetivos para acompanhar informações essenciais da operação e tomar decisões com mais clareza.",
+    text: "Painéis objetivos para acompanhar a operação, enxergar padrões e tomar decisões com mais contexto.",
   },
   {
     icon: PlugZap,
     title: "Integrações",
-    text: "Conexões com WhatsApp, formulários e ferramentas digitais para melhorar o fluxo de trabalho.",
+    text: "Conexões entre WhatsApp, formulários e ferramentas digitais para reduzir ruído e melhorar o fluxo de trabalho.",
   },
 ];
 
@@ -205,15 +229,17 @@ function SectionHeader({
   title,
   description,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description?: string;
 }) {
   return (
     <div className="mx-auto mb-10 max-w-3xl text-center motion-safe:animate-[atlas-reveal_620ms_ease-out_both]">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
-        {eyebrow}
-      </p>
+      {eyebrow ? (
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
+          {eyebrow}
+        </p>
+      ) : null}
       <h2 className="font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl">
         {title}
       </h2>
@@ -230,8 +256,8 @@ export function LandingSections() {
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            eyebrow="Problemas"
-            title="Seu negócio não precisa de mais improviso. Precisa de estrutura."
+            title="Quando o digital não acompanha a operação, o negócio perde tempo, clareza e oportunidades."
+            description="O problema não é só atender. É atender sem estrutura, sem fluxo claro e sem uma experiência que conduza o cliente até a ação."
           />
           <div className="atlas-mobile-carousel md:grid-cols-2 lg:grid-cols-3">
             {problems.map((problem) => (
@@ -244,8 +270,8 @@ export function LandingSections() {
       <section id="solucoes" className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            eyebrow="Soluções"
-            title="Soluções digitais criadas para vender, organizar e automatizar."
+            title="Soluções criadas para organizar atendimento, automatizar rotinas e vender melhor."
+            description="Quando o processo fica claro, o atendimento melhora, a equipe ganha tempo e o cliente entende exatamente o próximo passo."
           />
           <div className="atlas-mobile-carousel md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
@@ -258,9 +284,8 @@ export function LandingSections() {
       <section id="projetos" className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            eyebrow="Modelos de solução"
-            title="Soluções digitais para transformar atenção em operação"
-            description="Modelos de soluções que a Atlas Systems pode desenvolver para negócios que querem vender, organizar e automatizar melhor. São exemplos de aplicação, não estudos de caso de clientes."
+            title="Aplicações que conectam presença digital, atendimento e operação."
+            description="Estruturas digitais que podem ser adaptadas ao seu negócio para unir clareza, automação e experiência. São modelos de aplicação, não estudos de caso de clientes."
           />
           <div className="atlas-mobile-carousel md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
@@ -273,7 +298,6 @@ export function LandingSections() {
       <section id="processo" className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            eyebrow="Processo"
             title="Do diagnóstico à entrega, com clareza em cada etapa."
           />
           <div className="atlas-mobile-carousel md:grid-cols-3 lg:grid-cols-5">
@@ -287,9 +311,6 @@ export function LandingSections() {
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="motion-safe:animate-[atlas-reveal_620ms_ease-out_both]">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">
-              Diferencial
-            </p>
             <h2 className="font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl">
               Tecnologia com visão de negócio.
             </h2>
