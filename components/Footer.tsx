@@ -14,8 +14,12 @@ export function Footer() {
             height={42}
             className="h-9 w-auto object-contain"
           />
-          <p className="mt-3 max-w-md leading-7">
-            SaaS, sistemas, automações e landing pages para negócios modernos.
+          <p className="mt-3 font-heading text-base font-semibold text-white">
+            Estrutura digital para negócios modernos.
+          </p>
+          <p className="mt-2 max-w-md leading-7">
+            SaaS, sistemas, automações e landing pages para empresas que querem vender melhor,
+            organizar processos e operar com mais clareza.
           </p>
         </div>
 

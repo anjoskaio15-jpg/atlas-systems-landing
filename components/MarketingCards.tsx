@@ -88,7 +88,7 @@ export function ProjectCard({
           })()}
         </div>
         <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
-          Modelo de solução
+          Aplicação digital
         </span>
       </div>
       <h3 className="font-heading text-xl font-semibold text-white">{title}</h3>
@@ -142,9 +142,11 @@ export function ProcessStep({
 
 export function FeatureItem({
   icon,
+  title,
   text,
 }: Readonly<{
   icon: LucideIcon;
+  title: string;
   text: string;
 }>) {
   const Icon = icon;
@@ -152,7 +154,8 @@ export function FeatureItem({
   return (
     <div className="atlas-interactive-card min-w-[82%] snap-start rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:min-w-[20rem] md:min-w-0">
       <Icon className="mb-4 h-5 w-5 text-cyan-200" aria-hidden="true" />
-      <p className="leading-7 text-slate-200">{text}</p>
+      <h3 className="font-heading text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-3 leading-7 text-slate-200">{text}</p>
     </div>
   );
 }

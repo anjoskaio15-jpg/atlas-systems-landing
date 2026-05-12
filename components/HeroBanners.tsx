@@ -23,9 +23,10 @@ const AUTO_ROTATE_MS = 5000;
 const banners = [
   {
     badge: "SaaS • Sistemas • Automações • Landing Pages",
-    title: "Estrutura digital para negócios modernos.",
-    description: "SaaS, sistemas e automações para vender e operar melhor.",
-    support: "Clareza, conversão e operação em uma estrutura mais profissional.",
+    title: "Estrutura digital para negócios que vendem, atendem e agendam.",
+    description:
+      "A Atlas Systems cria páginas, sistemas e automações para transformar processos manuais em uma operação mais clara, profissional e organizada.",
+    support: "Menos improviso. Mais clareza no atendimento, na conversão e na rotina.",
     secondaryHref: "#solucoes",
     secondaryText: "Ver soluções",
   },

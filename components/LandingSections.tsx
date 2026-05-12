@@ -7,7 +7,6 @@ import {
   Gauge,
   LayoutTemplate,
   Lightbulb,
-  Link,
   MessageCircle,
   MessagesSquare,
   MousePointerClick,
@@ -16,8 +15,6 @@ import {
   Rocket,
   Route,
   Search,
-  ShieldCheck,
-  TrendingUp,
   Workflow,
 } from "lucide-react";
 import { CTAButton } from "@/components/CTAButton";
@@ -33,66 +30,66 @@ import { WHATSAPP_URL } from "@/lib/constants";
 const problems = [
   {
     icon: MessageCircle,
-    title: "Agendamentos se perdem no WhatsApp",
-    text: "Mensagens chegam fora de ordem, horários ficam soltos e oportunidades desaparecem no meio da conversa.",
+    title: "O WhatsApp vira gargalo",
+    text: "Mensagens se acumulam, perguntas se repetem e o atendimento depende de tempo livre para responder tudo manualmente.",
   },
   {
-    icon: Workflow,
-    title: "Rotinas manuais consomem tempo",
-    text: "Quando tudo depende de copiar, responder e conferir manualmente, a operação fica lenta e vulnerável a falhas.",
+    icon: MousePointerClick,
+    title: "O cliente interessado não sabe o próximo passo",
+    text: "Ele vê o perfil, gosta do serviço, mas não encontra uma página clara com valores, detalhes, horários ou uma chamada objetiva para agir.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "A agenda depende de memória e conversa",
+    text: "Horários, serviços, profissionais e confirmações ficam espalhados em mensagens, aumentando o risco de falhas e desencontros.",
   },
   {
     icon: LayoutTemplate,
-    title: "A presença digital não transmite confiança",
-    text: "Sem uma página clara, o cliente demora a entender serviços, valores, diferenciais e próximos passos.",
+    title: "Serviços bons parecem menos profissionais",
+    text: "Quando a apresentação digital não acompanha a qualidade do serviço, o negócio perde autoridade antes mesmo da primeira conversa.",
+  },
+  {
+    icon: Workflow,
+    title: "A operação cresce, mas o processo continua manual",
+    text: "O que funcionava com poucos clientes começa a gerar atraso, ruído e perda de controle quando a demanda aumenta.",
   },
   {
     icon: Search,
-    title: "Informação importante fica espalhada",
-    text: "Serviços, preços, disponibilidade e orientações acabam dispersos entre conversas, posts e memória da equipe.",
-  },
-  {
-    icon: MessagesSquare,
-    title: "O atendimento fica difícil de padronizar",
-    text: "Cada resposta sai de um jeito, confirmações falham e o cliente sente falta de clareza no processo.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Visitantes não viram contatos qualificados",
-    text: "Sem uma jornada bem pensada, o interesse inicial não se transforma em conversa, agendamento ou venda.",
+    title: "Dados importantes somem no atendimento",
+    text: "Preferências, histórico, retornos e oportunidades ficam perdidos em conversas, sem uma estrutura simples para acompanhar.",
   },
 ];
 
 const services = [
   {
     icon: MousePointerClick,
-    title: "Landing Pages",
-    text: "Páginas estratégicas para apresentar ofertas, responder dúvidas essenciais e transformar visitantes em conversas qualificadas.",
+    title: "Páginas que explicam antes de vender",
+    text: "Apresente serviços, diferenciais, valores, localização e chamada para contato em uma estrutura clara e profissional.",
   },
   {
     icon: CalendarCheck,
-    title: "Sistemas de Agendamento",
-    text: "Fluxos digitais para o cliente escolher serviço, dia e horário com menos fricção antes do atendimento.",
+    title: "Pré-agendamento mais organizado",
+    text: "Permita que o cliente indique serviço, interesse, data ou horário antes da conversa começar no WhatsApp.",
   },
   {
     icon: Bot,
-    title: "Automações",
-    text: "Rotinas automatizadas para confirmar, orientar, lembrar e organizar etapas repetitivas com mais consistência.",
+    title: "Automações para reduzir repetição",
+    text: "Padronize mensagens, confirmações, lembretes e retornos para economizar tempo e diminuir falhas manuais.",
   },
   {
     icon: Boxes,
-    title: "SaaS e Sistemas Sob Medida",
-    text: "Ferramentas digitais para processos específicos do negócio, com interface simples e base preparada para evolução.",
+    title: "Sistemas para estruturar a rotina",
+    text: "Crie fluxos digitais para controlar serviços, horários, clientes, solicitações e informações importantes.",
   },
   {
     icon: BarChart3,
-    title: "Dashboards",
-    text: "Painéis objetivos para acompanhar a operação, enxergar padrões e tomar decisões com mais contexto.",
+    title: "Dashboards para enxergar o negócio",
+    text: "Organize indicadores essenciais para acompanhar atendimentos, interesses, serviços procurados e oportunidades.",
   },
   {
     icon: PlugZap,
-    title: "Integrações",
-    text: "Conexões entre WhatsApp, formulários e ferramentas digitais para reduzir ruído e melhorar o fluxo de trabalho.",
+    title: "Integrações para conectar canais",
+    text: "Conecte páginas, formulários, WhatsApp e ferramentas digitais para evitar que informações fiquem espalhadas.",
   },
 ];
 
@@ -102,11 +99,11 @@ const projects = [
     title: "Landing Page de Conversão",
     href: "/projetos/conversion-landing-page",
     description:
-      "Uma página estratégica para apresentar uma oferta, gerar confiança e transformar visitantes em contatos qualificados.",
+      "Uma página estratégica para apresentar uma oferta, gerar confiança e direcionar o visitante para uma ação clara.",
     resources: [
-      "Proposta de valor clara",
-      "Seções de confiança e diferenciação",
-      "Chamada para WhatsApp",
+      "Proposta objetiva",
+      "Prova e diferenciais",
+      "CTA para WhatsApp",
       "Design responsivo",
     ],
   },
@@ -115,12 +112,12 @@ const projects = [
     title: "Página de Serviços com Pré-agendamento",
     href: "/projetos/service-page-pre-booking",
     description:
-      "Uma página para o cliente entender serviços, valores e próximos passos antes de iniciar uma conversa no WhatsApp.",
+      "Uma estrutura onde o cliente entende serviços, valores, duração e próximos passos antes de iniciar o atendimento.",
     resources: [
-      "Lista de serviços",
+      "Serviços organizados",
       "Valores e duração",
       "Seleção de interesse",
-      "Mensagem pré-preenchida para atendimento",
+      "Mensagem pronta",
     ],
   },
   {
@@ -128,9 +125,9 @@ const projects = [
     title: "Sistema de Agendamento Inteligente",
     href: "/projetos/smart-booking-system",
     description:
-      "Um fluxo digital para organizar horários, serviços e profissionais, reduzindo conversas repetitivas e erros manuais.",
+      "Um fluxo para organizar serviços, horários e profissionais com mais clareza, reduzindo conversas repetitivas.",
     resources: [
-      "Serviços por categoria",
+      "Categorias de serviços",
       "Horários disponíveis",
       "Dados do cliente",
       "Confirmação organizada",
@@ -141,12 +138,12 @@ const projects = [
     title: "Automação de Atendimento",
     href: "/projetos/customer-service-automation",
     description:
-      "Fluxos criados para responder, orientar, confirmar e recuperar clientes com mais velocidade e consistência.",
+      "Fluxos para orientar, confirmar, lembrar e recuperar clientes com mais agilidade e padronização.",
     resources: [
-      "Mensagens automatizadas",
-      "Confirmação de agendamento",
+      "Confirmações",
       "Lembretes",
       "Pós-atendimento",
+      "Recuperação de interesse",
     ],
   },
   {
@@ -154,11 +151,11 @@ const projects = [
     title: "Dashboard Operacional",
     href: "/projetos/operational-dashboard",
     description:
-      "Um painel simples para acompanhar informações importantes do negócio e tomar decisões com mais clareza.",
+      "Um painel simples para acompanhar informações importantes e tomar decisões com mais clareza.",
     resources: [
-      "Agendamentos",
+      "Atendimentos",
       "Clientes",
-      "Serviços mais procurados",
+      "Serviços procurados",
       "Indicadores essenciais",
     ],
   },
@@ -167,11 +164,11 @@ const projects = [
     title: "Mini CRM para Clientes",
     href: "/projetos/mini-crm-customers",
     description:
-      "Um sistema leve de gestão de clientes para organizar contatos, histórico e preferências, melhorando o relacionamento e o retorno.",
+      "Uma base leve para organizar contatos, histórico, preferências e oportunidades de retorno.",
     resources: [
       "Cadastro de clientes",
-      "Histórico de serviços",
-      "Anotações importantes",
+      "Histórico",
+      "Observações",
       "Ações de retorno",
     ],
   },
@@ -205,22 +202,26 @@ const process = [
   },
 ];
 
-const reasons = [
+const trustPoints = [
   {
-    icon: Route,
-    text: "Não criamos apenas telas bonitas; criamos ferramentas com objetivo.",
+    icon: Search,
+    title: "Clareza antes de código",
+    text: "Antes de desenvolver, entendemos o problema, o público, o fluxo de atendimento e o objetivo comercial.",
   },
   {
-    icon: TrendingUp,
-    text: "Pensamos em venda, operação, clareza e experiência do usuário.",
+    icon: PenTool,
+    title: "Design com função",
+    text: "A interface precisa ser bonita, mas também precisa guiar o visitante para a próxima ação.",
   },
   {
-    icon: Link,
-    text: "Construímos soluções simples de usar e fáceis de evoluir.",
+    icon: Workflow,
+    title: "Estrutura simples de usar",
+    text: "Soluções pensadas para o negócio operar melhor sem depender de processos complicados.",
   },
   {
-    icon: ShieldCheck,
-    text: "Ajudamos negócios a sair do improviso digital com mais segurança e método.",
+    icon: Rocket,
+    title: "Base preparada para crescer",
+    text: "O projeto nasce enxuto, mas com organização suficiente para evoluir conforme a demanda aumenta.",
   },
 ];
 
@@ -250,42 +251,67 @@ function SectionHeader({
   );
 }
 
+function ContextCTA({
+  title,
+  buttonLabel,
+}: {
+  title: string;
+  buttonLabel: string;
+}) {
+  return (
+    <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-3xl border border-white/10 bg-white/[0.035] p-5 sm:flex-row sm:items-center">
+      <p className="font-heading text-lg font-semibold text-white">{title}</p>
+      <CTAButton href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+        {buttonLabel}
+      </CTAButton>
+    </div>
+  );
+}
+
 export function LandingSections() {
   return (
     <>
       <section className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            title="Quando o digital não acompanha a operação, o negócio perde tempo, clareza e oportunidades."
-            description="O problema não é só atender. É atender sem estrutura, sem fluxo claro e sem uma experiência que conduza o cliente até a ação."
+            title="O problema raramente é falta de cliente. É falta de estrutura para converter e organizar."
+            description="Muitos negócios até recebem atenção no Instagram e no WhatsApp, mas perdem oportunidades porque o caminho entre interesse, atendimento e agendamento ainda depende de improviso."
           />
           <div className="atlas-mobile-carousel md:grid-cols-2 lg:grid-cols-3">
             {problems.map((problem) => (
               <ProblemCard key={problem.title} {...problem} />
             ))}
           </div>
+          <ContextCTA
+            title="Identificou isso no seu negócio?"
+            buttonLabel="Solicitar análise gratuita"
+          />
         </div>
       </section>
 
       <section id="solucoes" className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            title="Soluções criadas para organizar atendimento, automatizar rotinas e vender melhor."
-            description="Quando o processo fica claro, o atendimento melhora, a equipe ganha tempo e o cliente entende exatamente o próximo passo."
+            title="Quando o processo fica claro, o atendimento melhora e a operação evolui."
+            description="A Atlas Systems cria estruturas digitais que ajudam o cliente a entender, escolher, solicitar e avançar com menos atrito — enquanto o negócio ganha mais organização para atender melhor."
           />
           <div className="atlas-mobile-carousel md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
           </div>
+          <ContextCTA
+            title="Veja qual estrutura faz sentido para sua operação."
+            buttonLabel="Conversar sobre meu projeto"
+          />
         </div>
       </section>
 
       <section id="projetos" className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            title="Aplicações que conectam presença digital, atendimento e operação."
-            description="Estruturas digitais que podem ser adaptadas ao seu negócio para unir clareza, automação e experiência. São modelos de aplicação, não estudos de caso de clientes."
+            title="Aplicações digitais que conectam interesse, atendimento e operação."
+            description="Estruturas que podem ser adaptadas para salões, barbearias, clínicas de estética, prestadores de serviço e negócios que dependem de atendimento, agenda e relacionamento."
           />
           <div className="atlas-mobile-carousel md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
@@ -312,11 +338,16 @@ export function LandingSections() {
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="motion-safe:animate-[atlas-reveal_620ms_ease-out_both]">
             <h2 className="font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              Tecnologia com visão de negócio.
+              Construído para ser claro, útil e preparado para evoluir.
             </h2>
+            <p className="atlas-support-text mt-4 text-base leading-7">
+              Cada projeto é pensado para resolver um problema real de operação, não apenas para
+              parecer bonito. A prioridade é criar uma estrutura simples de usar, fácil de
+              entender e pronta para crescer com o negócio.
+            </p>
           </div>
           <div className="atlas-mobile-carousel md:grid-cols-2">
-            {reasons.map((reason) => (
+            {trustPoints.map((reason) => (
               <FeatureItem key={reason.text} {...reason} />
             ))}
           </div>
@@ -332,11 +363,11 @@ export function LandingSections() {
             />
             <Route className="mx-auto mb-5 h-8 w-8 text-cyan-200" aria-hidden="true" />
             <h2 className="mx-auto max-w-3xl font-heading text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              Quer transformar sua presença digital em uma estrutura de vendas e operação?
+              Quer transformar atendimento manual em uma estrutura digital mais profissional?
             </h2>
             <p className="atlas-support-text mx-auto mt-4 max-w-2xl leading-7">
-              Solicite uma análise gratuita e descubra como a Atlas Systems pode criar uma
-              solução para o seu negócio.
+              Solicite uma análise gratuita e descubra quais páginas, sistemas ou automações
+              fazem mais sentido para o seu negócio agora.
             </p>
             <div className="mt-8">
               <CTAButton
