@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CTAButton } from "@/components/CTAButton";
 import { WHATSAPP_URL } from "@/lib/constants";
 
@@ -17,11 +18,15 @@ export function Header() {
           aria-label="Atlas Systems - início"
           className="atlas-focus-ring flex items-center gap-3 rounded-xl"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-200/30 bg-cyan-300/10 font-heading text-base font-bold text-cyan-200 shadow-glow">
-            AS
-          </span>
-          <span className="font-heading text-base font-semibold tracking-wide text-white">
-            Atlas Systems
+          <span className="flex h-11 items-center rounded-xl border border-white/10 bg-white/[0.04] px-3 shadow-glow">
+            <Image
+              src="/brand/atlas-logo.png"
+              alt="Atlas Systems"
+              width={156}
+              height={36}
+              priority
+              className="h-8 w-auto object-contain"
+            />
           </span>
         </a>
 

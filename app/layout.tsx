@@ -41,6 +41,21 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      {
+        url: "/brand/atlas-icon.png",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/brand/atlas-icon.png",
+    apple: [
+      {
+        url: "/brand/atlas-icon.png",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
