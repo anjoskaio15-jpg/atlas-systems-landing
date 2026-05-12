@@ -18,14 +18,14 @@ export function Header() {
           aria-label="Atlas Systems - início"
           className="atlas-focus-ring flex items-center gap-3 rounded-xl"
         >
-          <span className="flex h-11 items-center rounded-xl border border-white/10 bg-white/[0.04] px-3 shadow-glow">
+          <span className="flex h-10 items-center rounded-xl border border-white/10 bg-white/[0.04] px-2.5 shadow-glow sm:h-11 sm:px-3">
             <Image
               src="/brand/atlas-logo.png"
               alt="Atlas Systems"
               width={156}
               height={36}
               priority
-              className="h-8 w-auto object-contain"
+              className="h-7 w-auto object-contain sm:h-8"
             />
           </span>
         </a>

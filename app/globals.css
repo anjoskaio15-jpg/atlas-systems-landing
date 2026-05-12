@@ -108,6 +108,15 @@ a {
   .atlas-focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-atlas-ink;
   }
+
+  .atlas-mobile-carousel {
+    @apply -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:overflow-visible md:px-0 md:pb-0;
+    scrollbar-width: none;
+  }
+
+  .atlas-mobile-carousel::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

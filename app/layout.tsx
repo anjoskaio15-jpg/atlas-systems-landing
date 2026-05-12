@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Atlas Systems" }],
   creator: "Atlas Systems",
   publisher: "Atlas Systems",
-  category: "technology",
+  category: "tecnologia",
   keywords: [
     "automações e sistemas",
     "landing pages para negócios",

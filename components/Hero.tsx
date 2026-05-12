@@ -40,7 +40,6 @@ export function Hero() {
           </p>
 
           <SectionTitle
-            eyebrow="@atlassystems.br"
             title="Sistemas, páginas e automações para negócios venderem mais e operarem melhor."
             description="A Atlas Systems cria estrutura digital para empresas que querem transformar processos manuais em soluções profissionais, inteligentes e escaláveis."
           />
@@ -72,13 +71,13 @@ export function Hero() {
             <div className="atlas-card-inner overflow-hidden rounded-[1.55rem]">
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
                 <div>
-                  <p className="text-sm text-slate-400">Atlas OS</p>
+                  <p className="text-sm text-slate-400">Atlas Operação</p>
                   <p className="font-heading text-xl font-semibold text-white">
                     Operação conectada
                   </p>
                 </div>
                 <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-                  Online
+                  Em operação
                 </span>
               </div>
 

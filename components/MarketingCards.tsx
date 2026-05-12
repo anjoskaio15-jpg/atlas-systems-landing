@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import { ArrowUpRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 type CardShellProps = Readonly<{
   children: ReactNode;
@@ -9,25 +9,39 @@ type CardShellProps = Readonly<{
 
 function CardShell({ children, className = "" }: CardShellProps) {
   return (
-    <article className={`group atlas-card atlas-interactive-card rounded-3xl p-6 ${className}`}>
+    <article
+      className={`group atlas-card atlas-interactive-card min-w-[82%] snap-start rounded-3xl p-6 sm:min-w-[22rem] md:min-w-0 ${className}`}
+    >
       {children}
     </article>
   );
 }
 
-export function ProblemCard({ title }: Readonly<{ title: string }>) {
+function IconFrame({ icon: Icon }: Readonly<{ icon: LucideIcon }>) {
+  return (
+    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10">
+      <Icon className="h-5 w-5 text-cyan-200" aria-hidden="true" />
+    </div>
+  );
+}
+
+export function ProblemCard({
+  icon,
+  title,
+}: Readonly<{
+  icon: LucideIcon;
+  title: string;
+}>) {
   return (
     <CardShell>
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10 text-cyan-200">
-        <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
-      </div>
+      <IconFrame icon={icon} />
       <h3 className="font-heading text-lg font-semibold text-white">{title}</h3>
     </CardShell>
   );
 }
 
 export function ServiceCard({
-  icon: Icon,
+  icon,
   title,
   text,
 }: Readonly<{
@@ -37,9 +51,7 @@ export function ServiceCard({
 }>) {
   return (
     <CardShell>
-      <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10">
-        <Icon className="h-5 w-5 text-cyan-200" aria-hidden="true" />
-      </div>
+      <IconFrame icon={icon} />
       <h3 className="font-heading text-xl font-semibold text-white">{title}</h3>
       <p className="atlas-support-text mt-3 leading-7">{text}</p>
     </CardShell>
@@ -47,30 +59,34 @@ export function ServiceCard({
 }
 
 export function ProjectCard({
+  icon,
   title,
   description,
   resources,
   href,
 }: Readonly<{
+  icon: LucideIcon;
   title: string;
   description: string;
   resources: string[];
   href: string;
 }>) {
   return (
-    <CardShell className="flex flex-col">
-      <div className="mb-6 rounded-2xl border border-white/10 bg-atlas-deep/70 p-4">
-        <div className="mb-4 flex items-center justify-between">
-          <span className="rounded-full bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-            Conceito
-          </span>
-          <ArrowUpRight className="h-5 w-5 text-slate-400 transition group-hover:text-cyan-200" aria-hidden="true" />
+    <CardShell className="relative flex flex-col overflow-hidden border-cyan-200/10 bg-gradient-to-br from-white/[0.08] to-white/[0.025]">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent"
+      />
+      <div className="mb-6 flex items-start justify-between gap-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10 p-3">
+          {(() => {
+            const Icon = icon;
+            return <Icon className="h-6 w-6 text-cyan-200" aria-hidden="true" />;
+          })()}
         </div>
-        <div className="grid gap-2">
-          <span className="h-3 w-2/3 rounded-full bg-white/20" />
-          <span className="h-3 w-full rounded-full bg-white/10" />
-          <span className="h-3 w-4/5 rounded-full bg-cyan-200/20" />
-        </div>
+        <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-300">
+          Modelo de solução
+        </span>
       </div>
       <h3 className="font-heading text-xl font-semibold text-white">{title}</h3>
       <p className="atlas-support-text mt-3 leading-7">{description}</p>
@@ -86,7 +102,7 @@ export function ProjectCard({
         href={href}
         className="atlas-focus-ring mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:border-cyan-200/50 hover:bg-white/[0.08] motion-reduce:transform-none"
       >
-        Ver conceito
+        Explorar solução
         <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
       </a>
     </CardShell>
@@ -94,29 +110,45 @@ export function ProjectCard({
 }
 
 export function ProcessStep({
+  icon,
   index,
   title,
   text,
 }: Readonly<{
+  icon: LucideIcon;
   index: number;
   title: string;
   text: string;
 }>) {
   return (
-    <CardShell>
-      <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-cyan-200/20 bg-cyan-300/10 text-sm font-bold text-cyan-200">
-        {index}
-      </span>
+    <CardShell className="min-w-[76%] sm:min-w-[18rem]">
+      <div className="mb-5 flex items-center justify-between gap-4">
+        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-200/20 bg-cyan-300/10 text-sm font-bold text-cyan-200">
+          {index}
+        </span>
+        {(() => {
+          const Icon = icon;
+          return <Icon className="h-5 w-5 text-slate-400" aria-hidden="true" />;
+        })()}
+      </div>
       <h3 className="font-heading text-lg font-semibold text-white">{title}</h3>
       <p className="atlas-support-text mt-3 text-sm leading-6">{text}</p>
     </CardShell>
   );
 }
 
-export function FeatureItem({ text }: Readonly<{ text: string }>) {
+export function FeatureItem({
+  icon,
+  text,
+}: Readonly<{
+  icon: LucideIcon;
+  text: string;
+}>) {
+  const Icon = icon;
+
   return (
-    <div className="atlas-interactive-card rounded-3xl border border-white/10 bg-white/[0.04] p-5">
-      <Sparkles className="mb-4 h-5 w-5 text-cyan-200" aria-hidden="true" />
+    <div className="atlas-interactive-card min-w-[82%] snap-start rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:min-w-[20rem] md:min-w-0">
+      <Icon className="mb-4 h-5 w-5 text-cyan-200" aria-hidden="true" />
       <p className="leading-7 text-slate-200">{text}</p>
     </div>
   );

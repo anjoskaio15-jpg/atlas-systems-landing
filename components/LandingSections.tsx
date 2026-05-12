@@ -1,10 +1,23 @@
 import {
+  BarChart3,
   Bot,
-  CalendarDays,
+  Boxes,
+  CalendarCheck,
+  Code2,
   Gauge,
-  Layout,
-  PanelsTopLeft,
+  LayoutTemplate,
+  Lightbulb,
+  Link,
+  MessageCircle,
+  MessagesSquare,
+  MousePointerClick,
+  PenTool,
+  PlugZap,
+  Rocket,
   Route,
+  Search,
+  ShieldCheck,
+  TrendingUp,
   Workflow,
 } from "lucide-react";
 import { CTAButton } from "@/components/CTAButton";
@@ -18,42 +31,42 @@ import {
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const problems = [
-  "Agendamentos perdidos no WhatsApp",
-  "Processos manuais e repetitivos",
-  "Falta de presença digital profissional",
-  "Clientes sem clareza sobre serviços e preços",
-  "Atendimento desorganizado",
-  "Baixa conversão de visitantes em contatos",
+  { icon: MessageCircle, title: "Agendamentos perdidos no WhatsApp" },
+  { icon: Workflow, title: "Processos manuais e repetitivos" },
+  { icon: LayoutTemplate, title: "Falta de presença digital profissional" },
+  { icon: Search, title: "Clientes sem clareza sobre serviços e preços" },
+  { icon: MessagesSquare, title: "Atendimento desorganizado" },
+  { icon: TrendingUp, title: "Baixa conversão de visitantes em contatos" },
 ];
 
 const services = [
   {
-    icon: Layout,
+    icon: MousePointerClick,
     title: "Landing Pages",
-    text: "Páginas profissionais para apresentar serviços, gerar confiança e transformar visitantes em contatos.",
+    text: "Páginas estratégicas para apresentar ofertas, gerar confiança e transformar visitantes em conversas qualificadas.",
   },
   {
-    icon: CalendarDays,
+    icon: CalendarCheck,
     title: "Sistemas de Agendamento",
-    text: "Fluxos inteligentes para clientes escolherem serviço, dia e horário com mais clareza.",
+    text: "Fluxos digitais para clientes escolherem serviço, dia e horário com mais clareza antes do atendimento.",
   },
   {
     icon: Bot,
     title: "Automações",
-    text: "Automatize tarefas repetitivas, organize atendimentos e reduza falhas operacionais.",
+    text: "Rotinas automatizadas para organizar atendimentos, reduzir retrabalho e manter respostas mais consistentes.",
   },
   {
-    icon: PanelsTopLeft,
+    icon: Boxes,
     title: "SaaS e Sistemas Sob Medida",
-    text: "Construção de ferramentas digitais para processos específicos do seu negócio.",
+    text: "Ferramentas digitais desenhadas para processos específicos do negócio, com interface simples e preparada para evolução.",
   },
   {
-    icon: Gauge,
+    icon: BarChart3,
     title: "Dashboards",
-    text: "Painéis simples e objetivos para visualizar informações importantes da operação.",
+    text: "Painéis objetivos para acompanhar informações essenciais da operação e tomar decisões com mais clareza.",
   },
   {
-    icon: Workflow,
+    icon: PlugZap,
     title: "Integrações",
     text: "Conexões com WhatsApp, formulários e ferramentas digitais para melhorar o fluxo de trabalho.",
   },
@@ -61,56 +74,130 @@ const services = [
 
 const projects = [
   {
-    title: "Barbearia Premium",
-    href: "/projetos/barbearia-premium",
+    icon: LayoutTemplate,
+    title: "Landing Page de Conversão",
+    href: "/projetos/conversion-landing-page",
     description:
-      "Página de serviços e pré-agendamento para barbearias que querem organizar horários e transmitir mais profissionalismo.",
-    resources: ["Serviços e preços", "Escolha de profissional", "CTA para WhatsApp", "Layout premium"],
+      "Uma página estratégica para apresentar uma oferta, gerar confiança e transformar visitantes em contatos qualificados.",
+    resources: [
+      "Proposta de valor clara",
+      "Seções de confiança e diferenciação",
+      "Chamada para WhatsApp",
+      "Design responsivo",
+    ],
   },
   {
-    title: "Clínica de Estética",
-    href: "/projetos/clinica-estetica",
+    icon: MousePointerClick,
+    title: "Página de Serviços com Pré-agendamento",
+    href: "/projetos/service-page-pre-booking",
     description:
-      "Landing page para apresentar procedimentos, gerar confiança e conduzir clientes para uma avaliação.",
-    resources: ["Procedimentos", "Benefícios", "Agendamento de avaliação", "Prova visual"],
+      "Uma página para o cliente entender serviços, valores e próximos passos antes de iniciar uma conversa no WhatsApp.",
+    resources: [
+      "Lista de serviços",
+      "Valores e duração",
+      "Seleção de interesse",
+      "Mensagem pré-preenchida para atendimento",
+    ],
   },
   {
-    title: "Studio de Unhas",
-    href: "/projetos/studio-de-unhas",
+    icon: CalendarCheck,
+    title: "Sistema de Agendamento Inteligente",
+    href: "/projetos/smart-booking-system",
     description:
-      "Página para nail designers e esmalterias mostrarem serviços, valores e facilitarem novos agendamentos.",
-    resources: ["Serviços", "Duração média", "Valores", "Chamada para manutenção"],
+      "Um fluxo digital para organizar horários, serviços e profissionais, reduzindo conversas repetitivas e erros manuais.",
+    resources: [
+      "Serviços por categoria",
+      "Horários disponíveis",
+      "Dados do cliente",
+      "Confirmação organizada",
+    ],
+  },
+  {
+    icon: MessagesSquare,
+    title: "Automação de Atendimento",
+    href: "/projetos/customer-service-automation",
+    description:
+      "Fluxos criados para responder, orientar, confirmar e recuperar clientes com mais velocidade e consistência.",
+    resources: [
+      "Mensagens automatizadas",
+      "Confirmação de agendamento",
+      "Lembretes",
+      "Pós-atendimento",
+    ],
+  },
+  {
+    icon: Gauge,
+    title: "Dashboard Operacional",
+    href: "/projetos/operational-dashboard",
+    description:
+      "Um painel simples para acompanhar informações importantes do negócio e tomar decisões com mais clareza.",
+    resources: [
+      "Agendamentos",
+      "Clientes",
+      "Serviços mais procurados",
+      "Indicadores essenciais",
+    ],
+  },
+  {
+    icon: Boxes,
+    title: "Mini CRM para Clientes",
+    href: "/projetos/mini-crm-customers",
+    description:
+      "Um sistema leve de gestão de clientes para organizar contatos, histórico e preferências, melhorando o relacionamento e o retorno.",
+    resources: [
+      "Cadastro de clientes",
+      "Histórico de serviços",
+      "Anotações importantes",
+      "Ações de retorno",
+    ],
   },
 ];
 
 const process = [
   {
+    icon: Search,
     title: "Análise",
     text: "Entendemos o negócio, o público e o problema principal.",
   },
   {
+    icon: Lightbulb,
     title: "Estratégia",
     text: "Definimos a solução ideal: página, sistema, automação ou fluxo completo.",
   },
   {
+    icon: PenTool,
     title: "Design",
     text: "Criamos uma experiência visual profissional, clara e alinhada à marca.",
   },
   {
+    icon: Code2,
     title: "Desenvolvimento",
     text: "Construímos com código limpo, responsivo e preparado para evolução.",
   },
   {
+    icon: Rocket,
     title: "Entrega",
     text: "Publicamos, revisamos e orientamos os próximos passos.",
   },
 ];
 
 const reasons = [
-  "Não criamos apenas telas bonitas; criamos ferramentas com objetivo.",
-  "Pensamos em venda, operação, clareza e experiência do usuário.",
-  "Construímos soluções simples de usar e fáceis de evoluir.",
-  "Ajudamos negócios a sair do improviso digital.",
+  {
+    icon: Route,
+    text: "Não criamos apenas telas bonitas; criamos ferramentas com objetivo.",
+  },
+  {
+    icon: TrendingUp,
+    text: "Pensamos em venda, operação, clareza e experiência do usuário.",
+  },
+  {
+    icon: Link,
+    text: "Construímos soluções simples de usar e fáceis de evoluir.",
+  },
+  {
+    icon: ShieldCheck,
+    text: "Ajudamos negócios a sair do improviso digital com mais segurança e método.",
+  },
 ];
 
 function SectionHeader({
@@ -146,9 +233,9 @@ export function LandingSections() {
             eyebrow="Problemas"
             title="Seu negócio não precisa de mais improviso. Precisa de estrutura."
           />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="atlas-mobile-carousel md:grid-cols-2 lg:grid-cols-3">
             {problems.map((problem) => (
-              <ProblemCard key={problem} title={problem} />
+              <ProblemCard key={problem.title} {...problem} />
             ))}
           </div>
         </div>
@@ -160,7 +247,7 @@ export function LandingSections() {
             eyebrow="Soluções"
             title="Soluções digitais criadas para vender, organizar e automatizar."
           />
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="atlas-mobile-carousel md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
@@ -171,11 +258,11 @@ export function LandingSections() {
       <section id="projetos" className="px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            eyebrow="Portfólio conceito"
-            title="Projetos conceito para demonstrar possibilidades reais."
-            description="Os exemplos abaixo são demonstrativos criados para mostrar formatos, fluxos e aplicações possíveis. Não representam clientes reais."
+            eyebrow="Modelos de solução"
+            title="Soluções digitais para transformar atenção em operação"
+            description="Modelos de soluções que a Atlas Systems pode desenvolver para negócios que querem vender, organizar e automatizar melhor. São exemplos de aplicação, não estudos de caso de clientes."
           />
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="atlas-mobile-carousel md:grid-cols-2 xl:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
@@ -189,7 +276,7 @@ export function LandingSections() {
             eyebrow="Processo"
             title="Do diagnóstico à entrega, com clareza em cada etapa."
           />
-          <div className="grid gap-4 lg:grid-cols-5">
+          <div className="atlas-mobile-carousel md:grid-cols-3 lg:grid-cols-5">
             {process.map((step, index) => (
               <ProcessStep key={step.title} index={index + 1} {...step} />
             ))}
@@ -207,9 +294,9 @@ export function LandingSections() {
               Tecnologia com visão de negócio.
             </h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="atlas-mobile-carousel md:grid-cols-2">
             {reasons.map((reason) => (
-              <FeatureItem key={reason} text={reason} />
+              <FeatureItem key={reason.text} {...reason} />
             ))}
           </div>
         </div>

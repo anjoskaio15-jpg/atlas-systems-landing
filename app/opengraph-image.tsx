@@ -90,7 +90,7 @@ export default function OpenGraphImage() {
                 Atlas Systems
               </div>
               <div style={{ color: "#aab4c5", fontSize: 20, marginTop: 6 }}>
-                @atlassystems.br
+                Tecnologia para negócios modernos
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function OpenGraphImage() {
         </div>
 
         <div style={{ alignItems: "center", display: "flex", gap: 18 }}>
-          {["Landing pages", "Agendamentos", "Dashboards", "Integrações"].map((item) => (
+          {["Landing Pages", "Agendamentos", "Dashboards", "Integrações"].map((item) => (
             <div
               key={item}
               style={{
