@@ -8,8 +8,10 @@ import {
   BarChart3,
   Boxes,
   CalendarCheck,
+  CheckCircle2,
   Layers,
   MessageCircle,
+  MousePointerClick,
   PlugZap,
   Workflow,
 } from "lucide-react";
@@ -27,35 +29,171 @@ const banners = [
     support: "Projetos pensados para clareza, conversão e operação.",
     niche:
       "Ideal para salões, barbearias, clínicas de estética e negócios que dependem de atendimento, agendamento e WhatsApp.",
-    primaryCta: true,
-    panelTitle: "Operação conectada",
-    panelStatus: "Menos manual",
-    items: [
-      { label: "Agendamentos", value: "Fluxo claro", icon: CalendarCheck },
-      { label: "Automações", value: "Rotinas guiadas", icon: Workflow },
-      { label: "Indicadores", value: "Visão objetiva", icon: BarChart3 },
-    ],
-    chips: ["Atendimento", "Operação", "WhatsApp", "Indicadores"],
+    secondaryHref: "#solucoes",
+    secondaryText: "Ver soluções",
   },
   {
-    badge: "Operação digital",
-    title: "Páginas, sistemas e automações para transformar atendimento em estrutura.",
+    badge: "Jornada operacional",
+    title: "Do atendimento manual a uma operação digital organizada.",
     description:
-      "Organize pré-agendamentos, WhatsApp, CRM, dashboards e integrações em uma experiência mais clara para o cliente e mais controlável para o negócio.",
-    support: "Soluções digitais pensadas para reduzir ruído, padronizar processos e apoiar decisões.",
+      "Conecte páginas, pré-agendamento, WhatsApp, automações e indicadores em uma estrutura mais clara para o seu negócio.",
+    support:
+      "Uma jornada digital pensada para reduzir improviso, organizar informações e facilitar decisões.",
     niche:
-      "Uma base sob medida para negócios que precisam vender, atender e acompanhar a operação com mais método.",
-    primaryCta: false,
-    panelTitle: "Base conectada",
-    panelStatus: "Processo inteligente",
-    items: [
-      { label: "Pré-agendamento", value: "Menos atrito", icon: CalendarCheck },
-      { label: "Mini CRM", value: "Histórico útil", icon: Boxes },
-      { label: "Integrações", value: "Fluxo conectado", icon: PlugZap },
-    ],
-    chips: ["Landing Pages", "Dashboard", "Mini CRM", "Automações"],
+      "O caminho fica mais previsível quando cada etapa conduz o cliente e orienta a operação.",
+    secondaryHref: "#projetos",
+    secondaryText: "Entender possibilidades",
   },
 ];
+
+const dashboardItems = [
+  { label: "Páginas", value: "Conversão", icon: Layers },
+  { label: "Sistemas", value: "Processo claro", icon: Boxes },
+  { label: "Automações", value: "Menos retrabalho", icon: Workflow },
+];
+
+const journeySteps = [
+  {
+    title: "Cliente encontra",
+    icon: MousePointerClick,
+    details: ["Página profissional", "Serviços claros", "CTA para WhatsApp"],
+  },
+  {
+    title: "Cliente solicita",
+    icon: CalendarCheck,
+    details: ["Pré-agendamento", "Interesse do serviço", "Mensagem pronta"],
+  },
+  {
+    title: "Negócio organiza",
+    icon: MessageCircle,
+    details: ["Atendimento padronizado", "Agenda estruturada", "Dados centralizados"],
+  },
+  {
+    title: "Evolução contínua",
+    icon: BarChart3,
+    details: ["Automações", "Dashboard", "Retorno de clientes"],
+  },
+];
+
+function DashboardVisual() {
+  return (
+    <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-4 shadow-panel backdrop-blur">
+      <div className="rounded-[1.35rem] border border-white/10 bg-atlas-deep/80 p-5">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-sm text-slate-400">Atlas Operação</p>
+            <p className="font-heading text-xl font-semibold text-white">Painel comercial</p>
+          </div>
+          <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
+            Menos manual
+          </span>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          {dashboardItems.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-white/10 bg-white/[0.045] p-4"
+              >
+                <Icon className="mb-4 h-5 w-5 text-cyan-200" aria-hidden="true" />
+                <p className="text-xs text-slate-400">{item.label}</p>
+                <p className="mt-2 text-sm font-semibold text-white">{item.value}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
+          <div className="mb-4 flex items-center justify-between">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
+              Estrutura de conversão
+            </p>
+            <BarChart3 className="h-5 w-5 text-cyan-200" aria-hidden="true" />
+          </div>
+          <div className="grid grid-cols-12 items-end gap-2">
+            {[42, 58, 48, 72, 62, 80, 70, 86, 76, 92, 82, 96].map((height, index) => (
+              <span
+                key={`${height}-${index}`}
+                className="rounded-t-md bg-gradient-to-t from-sky-500/35 to-cyan-200"
+                style={{ height: `${height}px` }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {["Oferta clara", "CTA visível", "Fluxo orientado", "Base escalável"].map((item) => (
+            <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
+              <CheckCircle2 className="h-4 w-4 text-cyan-200" aria-hidden="true" />
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function JourneyVisual() {
+  return (
+    <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.045] p-4 shadow-panel backdrop-blur">
+      <div className="relative rounded-[1.35rem] border border-white/10 bg-atlas-deep/80 p-5">
+        <div
+          aria-hidden="true"
+          className="absolute bottom-8 left-10 top-20 hidden w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/25 to-transparent lg:block"
+        />
+        <div className="mb-6">
+          <p className="text-sm text-slate-400">Mapa da jornada</p>
+          <p className="font-heading text-xl font-semibold text-white">
+            Da descoberta ao retorno
+          </p>
+        </div>
+
+        <div className="grid gap-4">
+          {journeySteps.map((step, index) => {
+            const Icon = step.icon;
+
+            return (
+              <div
+                key={step.title}
+                className="relative rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+              >
+                <div className="flex gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10 text-cyan-200">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="font-heading text-base font-semibold text-white">
+                        {step.title}
+                      </p>
+                      <span className="rounded-full bg-white/[0.055] px-2.5 py-1 text-xs font-semibold text-slate-400">
+                        Etapa {index + 1}
+                      </span>
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {step.details.map((detail) => (
+                        <span
+                          key={detail}
+                          className="rounded-full border border-white/10 bg-atlas-deep/70 px-3 py-1.5 text-xs font-medium text-slate-300"
+                        >
+                          {detail}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function HeroBanners() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -167,7 +305,7 @@ export function HeroBanners() {
                   className="absolute right-0 top-0 h-48 w-48 rounded-full bg-cyan-300/10 blur-3xl"
                 />
 
-                <div className="relative grid min-h-[660px] items-center gap-9 lg:min-h-[560px] lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="relative grid min-h-[760px] items-center gap-9 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr]">
                   <div>
                     <p className="atlas-badge mb-5 max-w-full">{banner.badge}</p>
                     {index === 0 ? (
@@ -195,78 +333,14 @@ export function HeroBanners() {
                       >
                         Solicitar análise gratuita
                       </CTAButton>
-                      <CTAButton href="#solucoes" variant="secondary">
-                        Ver soluções
+                      <CTAButton href={banner.secondaryHref} variant="secondary">
+                        {banner.secondaryText}
                       </CTAButton>
                     </div>
                   </div>
 
                   <div className="relative">
-                    <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-4 shadow-panel backdrop-blur">
-                      <div className="rounded-[1.35rem] border border-white/10 bg-atlas-deep/80 p-5">
-                        <div className="mb-6 flex items-center justify-between gap-4">
-                          <div>
-                            <p className="text-sm text-slate-400">Atlas Operação</p>
-                            <p className="font-heading text-xl font-semibold text-white">
-                              {banner.panelTitle}
-                            </p>
-                          </div>
-                          <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-                            {banner.panelStatus}
-                          </span>
-                        </div>
-
-                        <div className="grid gap-3 sm:grid-cols-3">
-                          {banner.items.map((item) => {
-                            const Icon = item.icon;
-
-                            return (
-                              <div
-                                key={item.label}
-                                className="rounded-2xl border border-white/10 bg-white/[0.045] p-4"
-                              >
-                                <Icon className="mb-4 h-5 w-5 text-cyan-200" aria-hidden="true" />
-                                <p className="text-xs text-slate-400">{item.label}</p>
-                                <p className="mt-2 text-sm font-semibold text-white">
-                                  {item.value}
-                                </p>
-                              </div>
-                            );
-                          })}
-                        </div>
-
-                        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-                          <div className="mb-4 flex items-center justify-between">
-                            <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
-                              Fluxo digital
-                            </p>
-                            <MessageCircle className="h-5 w-5 text-cyan-200" aria-hidden="true" />
-                          </div>
-                          <div className="grid grid-cols-12 items-end gap-2">
-                            {[42, 58, 48, 72, 62, 80, 70, 86, 76, 92, 82, 96].map(
-                              (height, barIndex) => (
-                                <span
-                                  key={`${height}-${barIndex}`}
-                                  className="rounded-t-md bg-gradient-to-t from-sky-500/35 to-cyan-200"
-                                  style={{ height: `${height}px` }}
-                                />
-                              ),
-                            )}
-                          </div>
-                        </div>
-
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {banner.chips.map((chip) => (
-                            <span
-                              key={chip}
-                              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300"
-                            >
-                              {chip}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+                    {index === 0 ? <DashboardVisual /> : <JourneyVisual />}
                   </div>
                 </div>
               </article>
