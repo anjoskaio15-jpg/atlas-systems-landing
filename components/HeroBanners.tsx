@@ -23,24 +23,18 @@ const AUTO_ROTATE_MS = 5000;
 const banners = [
   {
     badge: "SaaS • Sistemas • Automações • Landing Pages",
-    title: "Sistemas, páginas e automações para negócios venderem mais e operarem melhor.",
-    description:
-      "A Atlas Systems cria estrutura digital para empresas que querem transformar processos manuais em soluções profissionais, inteligentes e escaláveis.",
-    support: "Projetos pensados para clareza, conversão e operação.",
-    niche:
-      "Ideal para salões, barbearias, clínicas de estética e negócios que dependem de atendimento, agendamento e WhatsApp.",
+    title: "Estrutura digital para negócios modernos.",
+    description: "SaaS, sistemas e automações para vender e operar melhor.",
+    support: "Clareza, conversão e operação em uma estrutura mais profissional.",
     secondaryHref: "#solucoes",
     secondaryText: "Ver soluções",
   },
   {
-    badge: "Jornada operacional",
-    title: "Do atendimento manual a uma operação digital organizada.",
+    badge: "Jornada digital",
+    title: "Do atendimento manual à operação organizada.",
     description:
-      "Conecte páginas, pré-agendamento, WhatsApp, automações e indicadores em uma estrutura mais clara para o seu negócio.",
-    support:
-      "Uma jornada digital pensada para reduzir improviso, organizar informações e facilitar decisões.",
-    niche:
-      "O caminho fica mais previsível quando cada etapa conduz o cliente e orienta a operação.",
+      "Páginas, pré-agendamento, automações e dashboards em uma estrutura mais clara.",
+    support: "Menos improviso. Mais processo, atendimento e controle.",
     secondaryHref: "#projetos",
     secondaryText: "Entender possibilidades",
   },
@@ -48,73 +42,77 @@ const banners = [
 
 const dashboardItems = [
   { label: "Páginas", value: "Conversão", icon: Layers },
-  { label: "Sistemas", value: "Processo claro", icon: Boxes },
-  { label: "Automações", value: "Menos retrabalho", icon: Workflow },
+  { label: "Sistemas", value: "Fluxo claro", icon: Boxes },
+  { label: "Automações", value: "Menos manual", icon: Workflow },
 ];
 
 const journeySteps = [
   {
     title: "Cliente encontra",
     icon: MousePointerClick,
-    details: ["Página profissional", "Serviços claros", "CTA para WhatsApp"],
+    details: ["Página", "Serviços", "WhatsApp"],
   },
   {
     title: "Cliente solicita",
     icon: CalendarCheck,
-    details: ["Pré-agendamento", "Interesse do serviço", "Mensagem pronta"],
+    details: ["Pré-agendamento", "Interesse", "Mensagem pronta"],
   },
   {
     title: "Negócio organiza",
     icon: MessageCircle,
-    details: ["Atendimento padronizado", "Agenda estruturada", "Dados centralizados"],
+    details: ["Atendimento", "Agenda", "Dados"],
   },
   {
-    title: "Evolução contínua",
+    title: "Operação evolui",
     icon: BarChart3,
-    details: ["Automações", "Dashboard", "Retorno de clientes"],
+    details: ["Automações", "Dashboard", "Retorno"],
   },
 ];
 
 function DashboardVisual() {
   return (
-    <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-4 shadow-panel backdrop-blur">
-      <div className="rounded-[1.35rem] border border-white/10 bg-atlas-deep/80 p-5">
-        <div className="mb-6 flex items-center justify-between gap-4">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.055] p-3 shadow-panel backdrop-blur sm:p-4">
+      <div className="rounded-[1.15rem] border border-white/10 bg-atlas-deep/80 p-4 sm:p-5">
+        <div className="mb-4 flex items-center justify-between gap-4 sm:mb-6">
           <div>
-            <p className="text-sm text-slate-400">Atlas Operação</p>
-            <p className="font-heading text-xl font-semibold text-white">Painel comercial</p>
+            <p className="text-xs text-slate-400 sm:text-sm">Atlas Operação</p>
+            <p className="font-heading text-lg font-semibold text-white sm:text-xl">
+              Painel comercial
+            </p>
           </div>
           <span className="rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-200">
-            Menos manual
+            Ativo
           </span>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
           {dashboardItems.map((item) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/10 bg-white/[0.045] p-4"
+                className="rounded-2xl border border-white/10 bg-white/[0.045] p-3 sm:p-4"
               >
-                <Icon className="mb-4 h-5 w-5 text-cyan-200" aria-hidden="true" />
-                <p className="text-xs text-slate-400">{item.label}</p>
-                <p className="mt-2 text-sm font-semibold text-white">{item.value}</p>
+                <Icon className="mb-3 h-4 w-4 text-cyan-200 sm:h-5 sm:w-5" aria-hidden="true" />
+                <p className="text-[0.68rem] text-slate-400 sm:text-xs">{item.label}</p>
+                <p className="mt-1 text-xs font-semibold text-white sm:mt-2 sm:text-sm">
+                  {item.value}
+                </p>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.035] p-4">
-          <div className="mb-4 flex items-center justify-between">
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
-              Estrutura de conversão
+        <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.035] p-3 sm:mt-5 sm:p-4">
+          <div className="mb-3 flex items-center justify-between sm:mb-4">
+            <p className="text-[0.68rem] font-medium uppercase tracking-[0.14em] text-slate-400 sm:text-xs">
+              Conversão
             </p>
-            <BarChart3 className="h-5 w-5 text-cyan-200" aria-hidden="true" />
+            <BarChart3 className="h-4 w-4 text-cyan-200 sm:h-5 sm:w-5" aria-hidden="true" />
           </div>
-          <div className="grid grid-cols-12 items-end gap-2">
-            {[42, 58, 48, 72, 62, 80, 70, 86, 76, 92, 82, 96].map((height, index) => (
+          <div className="grid grid-cols-12 items-end gap-1.5 sm:gap-2">
+            {[26, 38, 32, 50, 42, 58, 48, 64, 54, 70, 60, 76].map((height, index) => (
               <span
                 key={`${height}-${index}`}
                 className="rounded-t-md bg-gradient-to-t from-sky-500/35 to-cyan-200"
@@ -124,7 +122,7 @@ function DashboardVisual() {
           </div>
         </div>
 
-        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <div className="mt-4 hidden gap-3 sm:grid sm:grid-cols-2">
           {["Oferta clara", "CTA visível", "Fluxo orientado", "Base escalável"].map((item) => (
             <div key={item} className="flex items-center gap-2 text-sm text-slate-300">
               <CheckCircle2 className="h-4 w-4 text-cyan-200" aria-hidden="true" />
@@ -139,46 +137,46 @@ function DashboardVisual() {
 
 function JourneyVisual() {
   return (
-    <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.045] p-4 shadow-panel backdrop-blur">
-      <div className="relative rounded-[1.35rem] border border-white/10 bg-atlas-deep/80 p-5">
+    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-3 shadow-panel backdrop-blur sm:p-4">
+      <div className="relative rounded-[1.15rem] border border-white/10 bg-atlas-deep/80 p-4 sm:p-5">
         <div
           aria-hidden="true"
-          className="absolute bottom-8 left-10 top-20 hidden w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/25 to-transparent lg:block"
+          className="absolute left-8 top-16 hidden h-[calc(100%-5rem)] w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/25 to-transparent sm:block"
         />
-        <div className="mb-6">
-          <p className="text-sm text-slate-400">Mapa da jornada</p>
-          <p className="font-heading text-xl font-semibold text-white">
-            Da descoberta ao retorno
+        <div className="mb-4 sm:mb-5">
+          <p className="text-xs text-slate-400 sm:text-sm">Mapa da jornada</p>
+          <p className="font-heading text-lg font-semibold text-white sm:text-xl">
+            Fluxo mais previsível
           </p>
         </div>
 
-        <div className="grid gap-4">
+        <div className="grid gap-3">
           {journeySteps.map((step, index) => {
             const Icon = step.icon;
 
             return (
               <div
                 key={step.title}
-                className="relative rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                className="relative rounded-2xl border border-white/10 bg-white/[0.04] p-3 sm:p-4"
               >
-                <div className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10 text-cyan-200">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                <div className="flex gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-200/20 bg-cyan-300/10 text-cyan-200 sm:h-11 sm:w-11">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <p className="font-heading text-base font-semibold text-white">
+                      <p className="font-heading text-sm font-semibold text-white sm:text-base">
                         {step.title}
                       </p>
-                      <span className="rounded-full bg-white/[0.055] px-2.5 py-1 text-xs font-semibold text-slate-400">
-                        Etapa {index + 1}
+                      <span className="rounded-full bg-white/[0.055] px-2 py-0.5 text-[0.68rem] font-semibold text-slate-400 sm:px-2.5 sm:py-1 sm:text-xs">
+                        {index + 1}
                       </span>
                     </div>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
                       {step.details.map((detail) => (
                         <span
                           key={detail}
-                          className="rounded-full border border-white/10 bg-atlas-deep/70 px-3 py-1.5 text-xs font-medium text-slate-300"
+                          className="rounded-full border border-white/10 bg-atlas-deep/70 px-2.5 py-1 text-[0.68rem] font-medium text-slate-300 sm:px-3 sm:py-1.5 sm:text-xs"
                         >
                           {detail}
                         </span>
@@ -273,9 +271,9 @@ export function HeroBanners() {
         aria-hidden="true"
         className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-cyan-300/16 via-sky-500/8 to-transparent blur-2xl"
       />
-      <div className="atlas-card overflow-hidden rounded-[2rem] p-3 shadow-panel sm:rounded-[2.5rem] sm:p-4">
+      <div className="atlas-card overflow-hidden rounded-[2rem] p-2.5 shadow-panel sm:rounded-[2.5rem] sm:p-4">
         <div
-          className="relative touch-pan-y overflow-hidden rounded-[1.55rem] sm:rounded-[2rem]"
+          className="relative touch-pan-y overflow-hidden rounded-[1.45rem] sm:rounded-[2rem]"
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerCancel={() => {
@@ -289,11 +287,11 @@ export function HeroBanners() {
             {banners.map((banner, index) => (
               <article
                 key={banner.title}
-                className="atlas-card-inner relative min-w-full overflow-hidden px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12"
+                className="atlas-card-inner relative min-w-full overflow-hidden px-4 py-6 sm:px-8 sm:py-9 lg:px-10 lg:py-10"
               >
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 opacity-[0.075]"
+                  className="absolute inset-0 opacity-[0.07]"
                   style={{
                     backgroundImage:
                       "linear-gradient(rgba(255,255,255,0.42) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.42) 1px, transparent 1px)",
@@ -302,30 +300,31 @@ export function HeroBanners() {
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute right-0 top-0 h-48 w-48 rounded-full bg-cyan-300/10 blur-3xl"
+                  className="absolute right-0 top-0 h-40 w-40 rounded-full bg-cyan-300/10 blur-3xl sm:h-48 sm:w-48"
                 />
 
-                <div className="relative grid min-h-[760px] items-center gap-9 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr]">
+                <div className="relative grid min-h-[600px] items-center gap-5 sm:min-h-[620px] sm:gap-8 lg:min-h-[520px] lg:grid-cols-[0.94fr_1.06fr]">
                   <div>
-                    <p className="atlas-badge mb-5 max-w-full">{banner.badge}</p>
+                    <p className="atlas-badge mb-4 max-w-full text-[0.65rem] sm:mb-5 sm:text-xs">
+                      {banner.badge}
+                    </p>
                     {index === 0 ? (
-                      <h1 className="atlas-title-gradient font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                      <h1 className="atlas-title-gradient font-heading text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
                         {banner.title}
                       </h1>
                     ) : (
-                      <h2 className="atlas-title-gradient font-heading text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+                      <h2 className="atlas-title-gradient font-heading text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
                         {banner.title}
                       </h2>
                     )}
-                    <p className="atlas-support-text mt-5 max-w-2xl text-base leading-8 sm:text-lg">
+                    <p className="atlas-support-text mt-4 max-w-xl text-base leading-7 sm:text-lg sm:leading-8">
                       {banner.description}
                     </p>
-                    <p className="mt-5 text-sm font-medium text-slate-300">{banner.support}</p>
-                    <p className="mt-4 max-w-2xl text-sm leading-6 text-atlas-soft">
-                      {banner.niche}
+                    <p className="mt-3 max-w-xl text-sm font-medium leading-6 text-slate-300 sm:mt-4">
+                      {banner.support}
                     </p>
 
-                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
                       <CTAButton
                         href={WHATSAPP_URL}
                         target="_blank"
@@ -348,7 +347,7 @@ export function HeroBanners() {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-4 px-1">
+        <div className="mt-3 flex items-center justify-between gap-4 px-1 sm:mt-4">
           <div className="flex items-center gap-2">
             {banners.map((banner, index) => (
               <button
