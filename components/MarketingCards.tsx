@@ -50,10 +50,12 @@ export function ProjectCard({
   title,
   description,
   resources,
+  href,
 }: Readonly<{
   title: string;
   description: string;
   resources: string[];
+  href: string;
 }>) {
   return (
     <CardShell className="flex flex-col">
@@ -80,6 +82,13 @@ export function ProjectCard({
           </li>
         ))}
       </ul>
+      <a
+        href={href}
+        className="atlas-focus-ring mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:border-cyan-200/50 hover:bg-white/[0.08] motion-reduce:transform-none"
+      >
+        Ver conceito
+        <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+      </a>
     </CardShell>
   );
 }

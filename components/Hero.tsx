@@ -48,6 +48,10 @@ export function Hero() {
           <p className="mt-5 text-sm font-medium text-slate-300">
             Projetos pensados para clareza, conversão e operação.
           </p>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-atlas-soft">
+            Ideal para salões, barbearias, clínicas de estética e negócios que dependem de
+            atendimento, agendamento e WhatsApp.
+          </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <CTAButton href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
@@ -124,7 +128,7 @@ export function Hero() {
                     <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-400">
                       Pipeline digital
                     </p>
-                    <p className="text-xs font-semibold text-cyan-200">+32%</p>
+                    <p className="text-xs font-semibold text-cyan-200">Menos manual</p>
                   </div>
                   <div className="grid grid-cols-12 items-end gap-2">
                     {[38, 54, 46, 68, 58, 76, 64, 82, 72, 88, 78, 94].map(

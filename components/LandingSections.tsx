@@ -62,18 +62,21 @@ const services = [
 const projects = [
   {
     title: "Barbearia Premium",
+    href: "/projetos/barbearia-premium",
     description:
       "Página de serviços e pré-agendamento para barbearias que querem organizar horários e transmitir mais profissionalismo.",
     resources: ["Serviços e preços", "Escolha de profissional", "CTA para WhatsApp", "Layout premium"],
   },
   {
     title: "Clínica de Estética",
+    href: "/projetos/clinica-estetica",
     description:
       "Landing page para apresentar procedimentos, gerar confiança e conduzir clientes para uma avaliação.",
     resources: ["Procedimentos", "Benefícios", "Agendamento de avaliação", "Prova visual"],
   },
   {
     title: "Studio de Unhas",
+    href: "/projetos/studio-de-unhas",
     description:
       "Página para nail designers e esmalterias mostrarem serviços, valores e facilitarem novos agendamentos.",
     resources: ["Serviços", "Duração média", "Valores", "Chamada para manutenção"],
